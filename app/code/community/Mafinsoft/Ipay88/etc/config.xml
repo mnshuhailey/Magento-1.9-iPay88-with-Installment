@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mafinsoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to support@mafinsoft.com so we can send you a copy immediately.
+ *
+ * @category   Mafinsoft
+ * @package    Mafinsoft_Ipay88
+ * @copyright  Copyright (c) 2009 Mafinsoft Solutions (http://www.mafinsoft.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Mafinsoft_Ipay88>
+			<version>1.0.1</version>
+		</Mafinsoft_Ipay88>
+	</modules>
+	<global>
+		<models>
+			<ipay88>
+				<class>Mafinsoft_Ipay88_Model</class>
+			</ipay88>
+		</models>
+        <helpers>
+            <ipay88>
+                <class>Mafinsoft_Ipay88_Helper</class>
+            </ipay88>
+        </helpers>
+		<resources>
+			<ipay88_setup>
+				<setup>
+					<module>Mafinsoft_Ipay88</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</ipay88_setup>
+			<ipay88_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</ipay88_write>
+			<ipay88_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</ipay88_read>
+		</resources>
+		<blocks>
+			<ipay88><class>Mafinsoft_Ipay88_Block</class></ipay88>
+		</blocks>
+	</global>
+	<frontend>
+		<routers>
+			<ipay88>
+				<use>standard</use>
+				<args>
+					<module>Mafinsoft_Ipay88</module>
+					<frontName>ipay88</frontName>
+				</args>
+			</ipay88>
+		</routers>
+		<translate>
+			<modules>
+				<Mafinsoft_Ipay88>
+					<files>
+						<default>Mafinsoft_Ipay88.csv</default>
+					</files>
+				</Mafinsoft_Ipay88>
+			</modules>
+		</translate>
+		<layout>
+			<updates>
+				<ipay88>
+					<file>ipay88.xml</file>
+				</ipay88>
+			</updates>
+		</layout>
+	</frontend>
+	<adminhtml>
+		<translate>
+			<modules>
+				<Mafinsoft_Ipay88>
+					<files>
+						<default>Mafinsoft_Ipay88.csv</default>
+					</files>
+				</Mafinsoft_Ipay88>
+			</modules>
+		</translate>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ipay88>
+											<title>iPay88 Account Settings</title>
+										</ipay88>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<default>
+        <ipay88>
+            <settings>
+                <ipay88_merchantkey backend_model="adminhtml/system_config_backend_encrypted"/>
+            </settings>
+        </ipay88>	
+		<payment>		
+			<ipay88_2>
+				<active>0</active>
+				<model>ipay88/2</model>
+				<order_status>1</order_status>
+				<title>Credit Card - RM only (powered by iPay88)</title>
+				<allowspecific>0</allowspecific>
+			</ipay88_2>
+			<ipay88_6>
+				<active>0</active>
+				<model>ipay88/6</model>
+				<order_status>1</order_status>
+				<title>Maybank2u (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_6>
+			<ipay88_8>
+				<active>0</active>
+				<model>ipay88/8</model>
+				<order_status>1</order_status>
+				<title>Alliance Online Transfer (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_8>
+			<ipay88_10>
+				<active>0</active>
+				<model>ipay88/10</model>
+				<order_status>1</order_status>
+				<title>AM Bank (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_10>
+			<ipay88_14>
+				<active>0</active>
+				<model>ipay88/14</model>
+				<order_status>1</order_status>
+				<title>RHB (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_14>
+			<ipay88_15>
+				<active>0</active>
+				<model>ipay88/15</model>
+				<order_status>1</order_status>
+				<title>Hong Leong Bank Transfer (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_15>
+			<ipay88_16>
+				<active>0</active>
+				<model>ipay88/16</model>
+				<order_status>1</order_status>
+				<title>FPX (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_16>
+			<ipay88_17>
+				<active>0</active>
+				<model>ipay88/17</model>
+				<order_status>1</order_status>
+				<title>Mobile Money (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_17>
+			<ipay88_20>
+				<active>0</active>
+				<model>ipay88/20</model>
+				<order_status>1</order_status>
+				<title>CIMB Clicks (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_20>
+			<ipay88_21>
+				<active>0</active>
+				<model>ipay88/21</model>
+				<order_status>1</order_status>
+				<title>China Union Pay (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>CN</specificcountry>
+			</ipay88_21>
+			<ipay88_22>
+				<active>0</active>
+				<model>ipay88/22</model>
+				<order_status>1</order_status>
+				<title>Web Cash (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_22>
+			<ipay88_23>
+				<active>0</active>
+				<model>ipay88/23</model>
+				<order_status>1</order_status>
+				<title>MEPS Cash (powered by iPay88)</title>
+				<allowspecific>1</allowspecific>
+				<specificcountry>MY</specificcountry>
+			</ipay88_23>
+			<ipay88_25>
+				<active>0</active>
+				<model>ipay88/25</model>
+				<order_status>1</order_status>
+				<title>Credit Card - US Dollar only (powered by iPay88)</title>
+				<allowspecific>0</allowspecific>
+			</ipay88_25>
+			<ipay88_33>
+				<active>0</active>
+				<model>ipay88/33</model>
+				<order_status>1</order_status>
+				<title>PayPal - US Dollar only (powered by iPay88)</title>
+				<allowspecific>0</allowspecific>
+			</ipay88_33>			
+		</payment>
+		<ipay88>
+			<settings>
+				<activationstatus>0</activationstatus>
+			</settings>
+		</ipay88>
+	</default> 
+</config>
